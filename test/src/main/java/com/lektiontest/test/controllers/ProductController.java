@@ -2,7 +2,7 @@ package com.lektiontest.test.controllers;
 
 import java.util.List;
 
-import com.lektiontest.test.entities.Product;
+import com.lektiontest.test.entities.Products;
 import com.lektiontest.test.repositories.ProductRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,20 +21,20 @@ public class ProductController {
 
    @GetMapping("/")
    public String viewHomePage(Model model) {
-       List<Product> products = productRepository.findAll();
+       List<Products> products = productRepository.findAll();
        model.addAttribute("products", products);
       return "products";
    }
 
    @GetMapping("/new")
    public String showNewProductPage(Model model) {
-       Product product = new Product();
+       Products product = new Products();
        model.addAttribute("product", product);
        return "new-product";
    }
 
    @PostMapping(value ="/save")
-   public String saveProduct(@ModelAttribute("product") Product product) {
+   public String saveProduct(@ModelAttribute("product") Products product) {
        productRepository.save(product);
        return "redirect:/";
    }

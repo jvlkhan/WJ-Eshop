@@ -18,13 +18,13 @@
   <body>
     <div th:replace="../templates/header" : header></div>
     <div th:replace="../templates/homepage"></div>
-    <a href="new">Create new product</a>
-
+    <!-- <a href="new">Create new product</a> -->
+<!-- 
     <br /><br />
     <table border="1" cellpadding="10">
       <thead>
         <tr>
-          <th>Product ID</th>
+          <th>productCode ID</th>
           <th>Name</th>
           <th>Brand</th>
           <th>Made in</th>
@@ -34,19 +34,19 @@
       </thead>
       <tbody>
         <tr th:each="product : ${products}">
-          <td th:text="${product.id}">Product ID</td>
-          <td th:text="${product.name}">Name</td>
-          <td th:text="${product.brand}">Brand</td>
-          <td th:text="${product.madein}">Made in</td>
-          <td th:text="${product.price}">Price</td>
+          <td th:text="${product.productcode}">productCode</td>
+          <td th:text="${product.productname}">productName</td>
+          <td th:text="${product.productline}">productLine</td>
+          <td th:text="${product.productvendor}">productVendor</td>
+          <td th:text="${product.buyprice}">buyPrice</td>
           <td>
-            <a th:href="@{'/edit/' + ${product.id}}">Edit </a>
+            <a th:href="@{'/edit/' + ${product.productcode}}">Edit </a>
             &nbsp;&nbsp;&nbsp;
-            <a th:href="@{'/delete/' + ${product.id}}">Delete </a>
+            <a th:href="@{'/delete/' + ${product.productcode}}">Delete </a>
           </td>
         </tr>
       </tbody>
-    </table>
+    </table> -->
     <div th:replace="../templates/footer"></div>
   </body>
 </html>
