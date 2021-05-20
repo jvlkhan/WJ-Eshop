@@ -32,27 +32,30 @@
             style="width: 222px; height: 222px"
           />
           <h5 th:text="${product.productname}"></h5>
+          Price:
           <p
             th:text="${product.buyprice}"
             style="color: grey; font-size: px"
           ></p>
           <p th:text="${product.productdescription}"></p>
           <p>
-            <button
-              style="
-                border: none;
-                outline: 0;
-                padding: 12px;
-                color: white;
-                background-color: #000;
-                text-align: center;
-                cursor: pointer;
-                width: 100%;
-                font-size: 18px;
-              "
-            >
-              Add to Cart
-            </button>
+            <a href="/cart">
+              <button
+                style="
+                  border: none;
+                  outline: 0;
+                  padding: 12px;
+                  color: white;
+                  background-color: #000;
+                  text-align: center;
+                  cursor: pointer;
+                  width: 100%;
+                  font-size: 18px;
+                "
+              >
+                Add to Cart
+              </button>
+            </a>
           </p>
         </div>
       </div>
