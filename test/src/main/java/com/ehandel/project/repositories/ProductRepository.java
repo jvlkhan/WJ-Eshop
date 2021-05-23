@@ -1,8 +1,8 @@
-package com.lektiontest.test.repositories;
+package com.ehandel.project.repositories;
 
 import java.util.List;
 
-import com.lektiontest.test.entities.Products;
+import com.ehandel.project.entities.*;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Products, String> {
