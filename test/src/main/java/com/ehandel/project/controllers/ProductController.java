@@ -1,9 +1,9 @@
-package com.lektiontest.test.controllers;
+package com.ehandel.project.controllers;
 
 import java.util.List;
 
-import com.lektiontest.test.entities.Products;
-import com.lektiontest.test.repositories.ProductRepository;
+import com.ehandel.project.entities.*;
+import com.ehandel.project.repositories.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,6 @@ public class ProductController implements WebMvcConfigurer {
     @GetMapping("/")
     public String viewHomePage(Model model) {
         List<Products> products = productRepository.findTop9ByOrderByProductnameAsc();
-        // List<Products> products = productRepository.findAll();
         model.addAttribute("products", products);
         return "products";
     }
@@ -48,15 +47,15 @@ public class ProductController implements WebMvcConfigurer {
     @GetMapping("/cart")
     public String viewCart(Model model) {
         return "cart";
-    }
+    } 
 
-    @GetMapping("/checkout")
+    /* @GetMapping("/checkout")
     public String viewCheckout(Model model) {
         return "checkout";
-    }
+    } */
 
-    @GetMapping("/paymentdone")
+    /* @GetMapping("/paymentdone")
     public String viewPaymentdone(Model model) {
         return "paymentdone";
-    }
+    } */
 }

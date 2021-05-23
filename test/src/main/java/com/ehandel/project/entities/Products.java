@@ -1,4 +1,4 @@
-package com.lektiontest.test.entities;
+package com.ehandel.project.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -6,7 +6,6 @@ import javax.persistence.Id;
 @Entity
 public class Products {
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private String productcode;
     private String productname;
     private String productline;

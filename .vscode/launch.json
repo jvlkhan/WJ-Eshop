@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Application",
+            "request": "launch",
+            "mainClass": "com.ehandel.project.Application",
+            "projectName": "test"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-TestApplication<test>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
