@@ -14,10 +14,39 @@
     <form th:action="@{/}" th:object="${customer}" method="post" class="form">
       <div class="form-group">
         <label for="name">Name</label>
-        <input class="form-control" type="text" th:field="*{name}" id="name" placeholder="Full Name" required />
+        <input
+          class="form-control"
+          type="text"
+          th:field="*{name}"
+          id="name"
+          placeholder="Full Name"
+          required
+        />
         <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+
+        <label for="email">Email</label>
+        <input
+          class="form-control"
+          type="text"
+          th:field="*{email}"
+          id="email"
+          placeholder="Email"
+          required
+        />
+        <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+
+        <label for="adress">adress</label>
+        <input
+          class="form-control"
+          type="text"
+          th:field="*{adress}"
+          id="adress"
+          placeholder="adress"
+          required
+        />
+        <td th:if="${#fields.hasErrors('adress')}" th:errors="*{adress}"></td>
       </div>
-      <input type="submit" value="Submit" class="btn">
+      <input type="submit" value="Submit" class="btn" />
     </form>
   </body>
 </html>
