@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html
+  lang="en"
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:th="http://www.thymeleaf.org"
+>
   <head>
     <title>Grupp 4 E-handel</title>
     <link
@@ -14,51 +18,69 @@
     />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
+
   <body>
-    <div class="container" th:each="product : ${products}">
-      <div class="d-flex flex-row mr-5 ml-5 mt-3 mb-3">
-        <div
-          style="
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            max-width: 300px;
-            margin: auto;
-            text-align: center;
-            font-family: arial;
-          "
-        >
-          <img
-            src="https://sc04.alicdn.com/kf/H9234839e60c54aeeb6312a5b374fe780W.jpg"
-            alt="Denim Jeans"
-            style="width: 222px; height: 222px"
-          />
-          <h5 th:text="${product.productname}"></h5>
-          Price:
-          <p
-            th:text="${product.buyprice}"
-            style="color: grey; font-size: px"
-          ></p>
-          <p th:text="${product.productdescription}"></p>
-          <p>
-            <a href="/cart">
-              <button
-                style="
-                  border: none;
-                  outline: 0;
-                  padding: 12px;
-                  color: white;
-                  background-color: #000;
-                  text-align: center;
-                  cursor: pointer;
-                  width: 100%;
-                  font-size: 18px;
-                "
-              >
-                Add to Cart
-              </button>
-            </a>
-          </p>
-        </div>
-      </div>
+    <div class="container d-flex flex-row flex-wrap justify-content-around">
+      <tbody>
+        <tr th:each="product : ${products}">
+          <!-- <a href="detail"> -->
+          <a th:href="@{'/detail/' + ${product.productcode}}">
+            <div
+              style="
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                max-width: 300px;
+                height: 600px;
+                margin: auto;
+                text-align: center;
+                font-family: arial;
+              "
+              class="mr-4 mb-4"
+            >
+              <img
+                src="https://sc04.alicdn.com/kf/H9234839e60c54aeeb6312a5b374fe780W.jpg"
+                alt="Denim Jeans"
+                style="width: 222px; height: 222px"
+              />
+
+              <p style="color: grey; font-size: px; text-align: center">
+                <td th:text="${product.productname}"></td>
+              </p>
+              <p style="color: grey; font-size: px; text-align: center">
+                <td th:text="'Pris: ' + ${product.buyprice}"></td>
+              </p>
+              <p style="color: grey; font-size: px; text-align: center">
+                <td th:text="'MSRP: ' + ${product.msrp}"></td>
+              </p>
+              <p style="color: grey; font-size: px; text-align: center">
+                <td th:text="${product.productdescription}"></td>
+              </p>
+
+              <p>
+                <form style="display: inline;" action="#" th:action="@{'/addToCart/' + ${product.productcode}}" method="post">
+                  <a href="addToCart">
+                  <button
+                    style="
+                      border: none;
+                      outline: 0;
+                      padding: 12px;
+                      color: white;
+                      background-color: #000;
+                      text-align: center;
+                      cursor: pointer;
+                      width: 100%;
+                      font-size: 18px;
+                      position: bottom;
+                    "
+                  >
+                    Add to Cart
+                  </button>
+                </a>
+                </form>
+              </p>
+            </div>
+          </a>
+        </tr>
+      </tbody>
     </div>
   </body>
 </html>

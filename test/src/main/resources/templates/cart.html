@@ -7,7 +7,38 @@
   </head>
   <body>
     <div th:replace="../templates/header" : header></div>
-    <div>hello</div>
+    <table class="table" style="width: 50%; text-align: center; margin-left: auto; margin-right:auto">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>MSRP</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr th:each="cart : ${cart}">
+            <div>
+              <td>
+                <img
+                src="https://sc04.alicdn.com/kf/H9234839e60c54aeeb6312a5b374fe780W.jpg"
+                alt="Denim Jeans"
+                style="width: 100px; height: 100px"/></td>
+            </div>
+            <td th:text="${cart.productname}">productName</td>
+            <td th:text="${cart.buyprice}">buyPrice</td>
+            <td th:text="${cart.msrp}">msrp</td>
+          </tr>
+        </td>
+      </tbody>
+    </table>
+    <p style="width: 50%; text-align: center; margin-left: auto; margin-right:auto">total item:
+      <span th:text="${cart.size()}">temp</span>   
+    </p>
+    <p style="width: 50%; text-align: center; margin-left: auto; margin-right:auto">total pris msrp:
+        <span th:text="${temp}"></span>
+    </p>
     <div th:replace="../templates/footer"></div>
   </body>
 </html>
+

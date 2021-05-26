@@ -1,20 +1,22 @@
 package com.ehandel.project.entities;
 
+import java.util.Collection;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Products {
-    @Id
-    private String productcode;
-    private String productname;
-    private String productline;
-    private String productscale;
-    private String productvendor;
-    private String productdescription;
-    private int quantityinstock;
-    private long buyprice;
-    private long msrp;
+	@Id
+	private String productcode;
+	private String productname;
+	private String productline;
+	private String productscale;
+	private String productvendor;
+	private String productdescription;
+	private int quantityinstock;
+	private long buyprice;
+	private long msrp;
 
 	public String getProductcode() {
 		return this.productcode;
@@ -87,7 +89,5 @@ public class Products {
 	public void setMsrp(long msrp) {
 		this.msrp = msrp;
 	}
-
-
 
 }
