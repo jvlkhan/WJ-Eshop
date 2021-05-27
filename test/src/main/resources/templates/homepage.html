@@ -28,16 +28,14 @@
             <div
               style="
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                max-width: 300px;
-                height: 600px;
                 margin: auto;
                 text-align: center;
                 font-family: arial;
+                width: 300px;
               "
               class="mr-4 mb-4"
             >
-              <img
-                src="https://sc04.alicdn.com/kf/H9234839e60c54aeeb6312a5b374fe780W.jpg"
+            <img th:src="@{${'/images/' + product.productcode + '.jpg'}}"
                 alt="Denim Jeans"
                 style="width: 222px; height: 222px"
               />
@@ -52,7 +50,7 @@
                 <td th:text="'MSRP: ' + ${product.msrp}"></td>
               </p>
               <p style="color: grey; font-size: px; text-align: center">
-                <td th:text="${product.productdescription}"></td>
+                <textarea style="width:90%; height:100px" th:text="${product.productdescription}"></textarea>
               </p>
 
               <p>

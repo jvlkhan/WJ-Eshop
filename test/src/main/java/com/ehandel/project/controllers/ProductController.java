@@ -63,6 +63,7 @@ public class ProductController implements WebMvcConfigurer {
     }
 
     long temp;
+
     @PostMapping("/addToCart/{productcode}")
     public String addToCart(@PathVariable(name = "productcode") String id, @ModelAttribute("cart") Set<Products> cart,
             Model model) {
@@ -77,6 +78,7 @@ public class ProductController implements WebMvcConfigurer {
                 temp += incart.get(i);
             }
         }
+
         model.addAttribute("cart", cart);
         model.addAttribute("temp", temp);
         return "redirect:/";
