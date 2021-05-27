@@ -128,7 +128,6 @@ public class Customers {
         this.creditlimit = creditlimit;
     }
 
-
     public String toString() {
         return "Customer(Name: " + this.contactfirstname + "\nTelefon: " + this.phone + "\nAdress: " + this.addressline1 + ")";
     }

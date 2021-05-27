@@ -38,8 +38,10 @@
     <p style="width: 50%; text-align: center; margin-left: auto; margin-right:auto">total pris msrp:
         <span th:text="${temp}"></span>
     </p>
-    <button class="d-flex flex-row justify-content-center" style="color: white;
-    background-color: #000; width: 50%; text-align: center; margin-left: auto; margin-right:auto; border: none; padding:12px">Buy now</button>
+      <a href="/checkout">
+        <button value="Submit" class="d-flex flex-row justify-content-center" style="color: white;
+        background-color: #000; width: 50%; text-align: center; margin-left: auto; margin-right:auto; border: none; padding:12px">Checkout</button>
+      </a>
     <div th:replace="../templates/footer"></div>
   </body>
 </html>

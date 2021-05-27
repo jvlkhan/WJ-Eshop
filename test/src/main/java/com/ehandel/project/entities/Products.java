@@ -1,7 +1,5 @@
 package com.ehandel.project.entities;
 
-import java.util.Collection;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 

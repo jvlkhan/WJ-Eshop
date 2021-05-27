@@ -26,6 +26,9 @@ public class ProductController implements WebMvcConfigurer {
     @Autowired
     private ProductRepository productRepository;
 
+    public List<Long> incart = new ArrayList<Long>();
+    public List<Products> incartProducts = new ArrayList<Products>();
+
     @GetMapping("/")
     public String viewHomePage(Model model) {
         List<Products> products = productRepository.findTop9ByOrderByProductnameAsc();
@@ -68,11 +71,12 @@ public class ProductController implements WebMvcConfigurer {
     public String addToCart(@PathVariable(name = "productcode") String id, @ModelAttribute("cart") Set<Products> cart,
             Model model) {
         Products product = productRepository.findById(id).get();
-        List<Long> incart = new ArrayList<Long>();
+        incart = new ArrayList<Long>();
 
         boolean isItemPresent = cart.stream().anyMatch(item -> item.getProductcode() == product.getProductcode());
         if (!isItemPresent) {
             cart.add(product);
+            incartProducts.add(product);
             incart.add(product.getMsrp());
             for (int i = 0; i < incart.size(); i++) {
                 temp += incart.get(i);
