@@ -21,7 +21,7 @@
             <div>
               <td>
                 <img
-                src="https://sc04.alicdn.com/kf/H9234839e60c54aeeb6312a5b374fe780W.jpg"
+                th:src="@{${'/images/' + cart.productcode + '.jpg'}}"
                 alt="Denim Jeans"
                 style="width: 100px; height: 100px"/></td>
             </div>
@@ -38,6 +38,8 @@
     <p style="width: 50%; text-align: center; margin-left: auto; margin-right:auto">total pris msrp:
         <span th:text="${temp}"></span>
     </p>
+    <button class="d-flex flex-row justify-content-center" style="color: white;
+    background-color: #000; width: 50%; text-align: center; margin-left: auto; margin-right:auto; border: none; padding:12px">Buy now</button>
     <div th:replace="../templates/footer"></div>
   </body>
 </html>

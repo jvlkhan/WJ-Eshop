@@ -25,12 +25,12 @@ public class CustomerController implements WebMvcConfigurer {
 
     @GetMapping("/checkout")
     public String showForm(Model model) {
-        model.addAttribute("customer", new Customer());
+        model.addAttribute("customer", new Customers());
         return "checkout";
     }
 
     @PostMapping("/checkout")
-    public String checkPersonInfo(@Valid Customer customer, BindingResult bindingResult, Model model) {
+    public String checkPersonInfo(@Valid Customers customer, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return "checkout";
         }
